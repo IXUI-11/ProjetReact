@@ -14,17 +14,17 @@ export const Hero = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8h16M4 16h16"></path>
               </svg>
             </button>
-            <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80">Accueil</a>
-              <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80">Services</a>
-              <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80">À propos</a>
-              <a href="#" title="" className="text-base text-black transition-all duration-200 hover:text-opacity-80">Contact</a>
+           <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
+                <a href="#accueil" className="px-4 py-2  font-semibold rounded-full transition-all duration-200 hover:bg-yellow-400">Accueil</a>
+                <a href="#services" className="px-4 py-2  font-semibold rounded-full transition-all duration-200 hover:bg-yellow-400">Services</a>
+                <a href="#apropos" className="px-4 py-2  font-semibold rounded-full transition-all duration-200 hover:bg-yellow-400">À propos</a>
+                <a href="#contact" className="px-4 py-2  font-semibold rounded-full transition-all duration-200 hover:bg-yellow-400">Contact</a>
             </div>
             <a href="#" title="" className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-indigo-700 hover:text-white focus:text-white focus:bg-indigo-700 font-semibold text-white bg-indigo-600 rounded-full" role="button">S'inscrire</a>
           </div>
         </div>
       </header>
-      <section className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
+      <section  id="accueil" className ="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
