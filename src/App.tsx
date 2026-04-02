@@ -1,22 +1,16 @@
-// import {Navbar} from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { Service } from "./components/Service";
-import { Entreprise } from "./components/Entreprise";
+import { Route, Routes } from "react-router-dom";
+import { Accueil } from "./pages/Accueil";
+import { Login } from "./pages/Login";
 import { Footer } from "./components/Footer";
 
 export const App = () => {
-
-    return (
+  return (
     <div className="min-h-screen">
-      {/* <Navbar /> */}
-      <Hero/>
-      <Service/>
-      <Entreprise/>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Footer />
     </div>
   );
-}
-
-
-
-
+};
