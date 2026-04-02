@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="bg-black text-white py-16">
+    <footer id="contact" className="bg-black text-white py-16">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>

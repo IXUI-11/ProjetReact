@@ -1,6 +1,6 @@
 export const Service = () => {
   return (
-    <section className="py-16 bg-white">
+    <section id="services"  className="py-16 bg-white">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mb-12">
           <h2 className="mt-4 text-4xl font-bold text-black lg:text-5xl">Des outils simples pour un impact maximal</h2>

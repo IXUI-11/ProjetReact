@@ -1,6 +1,6 @@
 export const Entreprise = () => {
   return (
-    <section className="py-20 bg-[#FCF8F1] bg-opacity-30">
+    <section id="apropos" className="py-20 bg-[#FCF8F1] bg-opacity-30">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-6xl mb-16">
           <h2 className="mt-4 text-4xl font-bold text-black lg:text-5xl mb-8">À propos de BenoveAide</h2>
