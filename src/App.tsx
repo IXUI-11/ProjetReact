@@ -3,6 +3,7 @@ import { Accueil } from "./pages/Accueil";
 import { Login } from "./pages/Login";
 import { Admin } from "./pages/Admin";
 import { Missions } from "./pages/Missions";
+import { Benevoles } from "./pages/Benevoles";
 
 
 export const App = () => {
@@ -13,7 +14,9 @@ export const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/Admin" element={<Admin />}/>
         <Route path="/Missions" element={<Missions />} />
+        <Route path="/Benevoles" element={<Benevoles />} />
       </Routes>
     </div>
   );
+
 };
