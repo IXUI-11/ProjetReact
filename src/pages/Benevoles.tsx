@@ -54,9 +54,12 @@ export const Benevoles = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Pagination  */}
                 <div className="flex justify-center gap-2 mt-4">
                     <button
                         onClick={() => { setPageCourante(pageCourante - 1); }}
+                        // ! désactiver le bouton précédent si la page courante est égale à 1
                             disabled={pageCourante === 1}
                         className="px-4 py-2 bg-gray-200 cursor-pointer disabled:opacity-50"
                     >
@@ -64,6 +67,7 @@ export const Benevoles = () => {
                     </button>
                     <span className="px-4 py-2">{pageCourante}</span>
                     <button
+                    
                         onClick={() => { setPageCourante(pageCourante + 1); }}
                         disabled={fin >= benevoles.length}
                         className="px-4 py-2 bg-gray-200 cursor-pointer disabled:opacity-50"
