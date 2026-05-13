@@ -1,5 +1,6 @@
 import { Sidebar } from "../components/Sidebar";
 import { useEffect, useState } from "react";
+import { getTousLesBenevoles } from "../api/benevoles";
 
 export const Benevoles = () => {
     const [benevoles, setBenevoles] = useState([]);
@@ -18,8 +19,7 @@ export const Benevoles = () => {
 
     useEffect(() => {
         const fetchBenevoles = async () => {
-            const reponse = await fetch("http://localhost/api/Controller/benevole.php");
-            const data = await reponse.json();
+            const data = await getTousLesBenevoles();
             setBenevoles(data);
         };
         fetchBenevoles();

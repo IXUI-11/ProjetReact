@@ -1,5 +1,6 @@
 import { Sidebar } from "../components/Sidebar";
 import { useEffect, useState } from "react";
+import { getToutLesMissions } from "../api/missions";
 
 // import { Mission } from "../mesClasses/classMission";
 
@@ -28,9 +29,7 @@ export const Missions = () => {
 
 useEffect(() => {
     const fetchMissions = async () => {
-        const reponseApi = await fetch("http://localhost/api/Controller/MissionsController.php");
-        const dataDeMissions = await reponseApi.json();
-        console.log(dataDeMissions);
+        const dataDeMissions = await getToutLesMissions();
         setMissions(dataDeMissions);
     };
     fetchMissions();
