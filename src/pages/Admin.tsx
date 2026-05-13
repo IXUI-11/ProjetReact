@@ -1,27 +1,35 @@
 import { useEffect, useState } from "react"
 import { Sidebar } from "../components/Sidebar"
+import { getToutLesMissions, getMissionsRecentes } from "../api/missions"
+import { getTousLesBenevoles } from "../api/benevoles"
 
 export const Admin = () => {
 	const [missions, setMissions] = useState([])
-
+	const [missionsRecentes, setMissionsRecentes] = useState([])
 
     // ! Récupérer les missions pour le nombre de missions actives et finies
 	useEffect(() => {
 		const MissionActive = async () => {
-			const reponseApi = await fetch("http://localhost/api/Controller/MissionsController.php")
-			const dataDeMissions = await reponseApi.json()
-			console.log(dataDeMissions)
+			const dataDeMissions = await getToutLesMissions()
 			setMissions(dataDeMissions)
 		}
 		MissionActive()
+	}, [])
+
+	// ! Récupérer les 5 missions récentes
+	useEffect(() => {
+		const fetchMissionsRecentes = async () => {
+			const data = await getMissionsRecentes()
+			setMissionsRecentes(data)
+		}
+		fetchMissionsRecentes()
 	}, [])
 
     // ! Récupérer les bénévoles pour le nombre total de bénévoles
 	const [Benevoles, setBenevoles] = useState([])
 	useEffect(() => {
 		const fetchBenevoles = async () => {
-			const reponseAPiBenevole = await fetch("http://localhost/api/Controller/benevole.php")
-			const dataDeBenevoles = await reponseAPiBenevole.json()
+			const dataDeBenevoles = await getTousLesBenevoles()
 			setBenevoles(dataDeBenevoles)
 		}
 		fetchBenevoles()
@@ -36,7 +44,6 @@ export const Admin = () => {
 				<h1 className="text-3xl font-bold mb-6">Espace Admin</h1>
 
 				{/* Cards statistiques */}
-				{/* // TODO a brancher avec l'api */}
 				<div className="grid grid-cols-3 gap-6 min-h-48">
 					{/* Bénévoles actifs */}
 					<div className="bg-white p-6 flex flex-col justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-shadow duration-300">
@@ -70,6 +77,15 @@ export const Admin = () => {
 						<h1 className="font-bold w-1/5">Etat</h1>
 						<h1 className="font-bold w-1/5">Date</h1>
 					</div>
+					{missionsRecentes.map((mission: any) => (
+						<div key={mission.id} className="flex text-sm py-2 0">
+							<p className="w-1/5">{mission.titre}</p>
+							<p className="w-1/5">{mission.lieu}</p>
+							<p className="w-1/5">{mission.description}</p>
+							<p className="w-1/5">{mission.actif === 1 ? "Active" : "Finie"}</p>
+							<p className="w-1/5">{mission.date_mission}</p>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
