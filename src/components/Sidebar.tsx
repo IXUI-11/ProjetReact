@@ -24,7 +24,7 @@ export const Sidebar = () => {
           <nav className="flex flex-col gap-14">
             <a href="/Admin" className="text-gray-700 hover:text-indigo-600 font-medium">Dashboard</a>
             <a href="/Missions" className="text-gray-700 hover:text-indigo-600 font-medium">Missions</a>
-            <a href="#" className="text-gray-700 hover:text-indigo-600 font-medium">Bénévoles</a>
+            <a href="/Benevoles" className="text-gray-700 hover:text-indigo-600 font-medium">Bénévoles</a>
             <a href="#" className="text-gray-700 hover:text-indigo-600 font-medium">Statistiques</a>
           </nav>
 
