@@ -2,10 +2,16 @@ import { useEffect, useState } from "react"
 import { Sidebar } from "../components/Sidebar"
 import { getToutLesMissions, getMissionsRecentes } from "../api/missions"
 import { getTousLesBenevoles } from "../api/benevoles"
+import { useNavigate } from "react-router-dom"
 
 export const Admin = () => {
 	const [missions, setMissions] = useState([])
 	const [missionsRecentes, setMissionsRecentes] = useState([])
+	const rediriger = useNavigate();
+	// Récupère le rôle de l'utilisateur stocké dans le navigateur lors de sa connexion.
+	const role = localStorage.getItem("role");
+
+	
 
     // ! Récupérer les missions pour le nombre de missions actives et finies
 	useEffect(() => {
@@ -35,6 +41,11 @@ export const Admin = () => {
 		fetchBenevoles()
 	}, [])
 
+	// vérifcer si c''est un bénevole 
+	if(role !== "1") {
+		rediriger("/login");
+	}
+
 	return (
 		<div className="flex h-screen bg-[#f8f8f8da]">
 			<Sidebar />
@@ -58,7 +69,6 @@ export const Admin = () => {
 						</p>
 					</div>
 					{/* Missions finies */}
-					{/* filter pour filtrer un tableau comme le where dans mysql */}
 					<div className="bg-white p-6 flex flex-col justify-center shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] transition-shadow duration-300">
 						<p className="text-gray-500 text-sm">Missions finies</p>
 						<p className="text-4xl font-bold mt-2">
