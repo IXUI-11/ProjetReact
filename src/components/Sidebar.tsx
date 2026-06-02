@@ -1,7 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export const Sidebar = () => {
   const [sidebarOuverte, setSidebarOuverte] = useState(true);
+  const rediriger = useNavigate();
+
+  function deconnexion() {
+    localStorage.clear();
+    rediriger("/Login");
+  }
 
   return (
     <div className="flex">
@@ -25,10 +33,12 @@ export const Sidebar = () => {
             <a href="/Admin" className="text-gray-700 hover:text-indigo-600 font-medium">Dashboard</a>
             <a href="/Missions" className="text-gray-700 hover:text-indigo-600 font-medium">Missions</a>
             <a href="/Benevoles" className="text-gray-700 hover:text-indigo-600 font-medium">Bénévoles</a>
-            <a href="#" className="text-gray-700 hover:text-indigo-600 font-medium">Statistiques</a>
+            {/* <a href="#" className="text-gray-700 hover:text-indigo-600 font-medium">Statistiques</a> */}
           </nav>
 
-          <a href="#" className="text-white font-medium mt-auto bg-red-700 p-2 text-center">Déconnexion</a>
+          <a
+            onClick={() => { deconnexion(); }}
+            className="text-white font-medium mt-auto bg-red-700 p-2 text-center">Déconnexion</a>
         </div>
       )}
 
