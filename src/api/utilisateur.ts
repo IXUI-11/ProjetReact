@@ -1,5 +1,5 @@
 // URL de base pour toutes les requêtes liées aux utilisateurs
-const BASE_URL = "http://localhost/api/Controller/Utilisateur.php";
+const BASE_URL = "https://projetphp.salaheddinebelhaska.tech/Controller/Utilisateur.php";
 
 // Récupère les informations d'un bénévole (nom, prénom, email...) par son id
 export async function getBenevoleParId(id: any) {

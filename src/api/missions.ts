@@ -1,5 +1,5 @@
 // URL de base pour toutes les requêtes liées aux missions
-const BASE_URL = "http://localhost/api/Controller/missions.php";
+const BASE_URL = "https://projetphp.salaheddinebelhaska.tech/Controller/Missions.php";
 
 // Récupère toutes les missions disponibles
 export async function getToutLesMissions() {

@@ -1,5 +1,5 @@
 // URL de base pour toutes les requêtes liées aux participations
-const BASE_URL = "http://localhost/api/Controller/Participation.php";
+const BASE_URL = "https://projetphp.salaheddinebelhaska.tech/Controller/Participation.php";
 
 // Inscrit un bénévole à une mission en envoyant son id et l'id de la mission
 export async function inscrireBenevole(id_benevole: number, id_mission: number) {

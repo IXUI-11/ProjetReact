@@ -1,5 +1,5 @@
 // URL de base pour toutes les requêtes liées aux bénévoles
-const BASE_URL = "http://localhost/api/Controller/benevole.php";
+const BASE_URL = "https://projetphp.salaheddinebelhaska.tech/Controller/Benevole.php";
 
 // Récupère tous les bénévoles depuis l'API (requête GET simple)
 export async function getTousLesBenevoles() {
@@ -36,7 +36,7 @@ export async function getParticipationsBenevole(id: number) {
 // Annule une participation d'un bénévole depuis le côté admin par l'id de la participation
 // Utilise le fichier participation.php et non benevole.php
 export async function annulerParticipationAdmin(id: number) {
-    const reponse = await fetch(`http://localhost/api/Controller/participation.php?action=annulerAdmin`, {
+    const reponse = await fetch(`https://projetphp.salaheddinebelhaska.tech/Controller/Participation.php?action=annulerAdmin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id })

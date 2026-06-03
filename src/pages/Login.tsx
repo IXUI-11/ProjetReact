@@ -11,7 +11,8 @@ const btnPrimary = "w-full py-3 bg-indigo-600 text-white font-semibold rounded-f
 export const Login = () => {
 
   // Bascule entre le formulaire connexion et inscription
-  const [formulaireConnexion, setFormulaireConnexion] = useState(true);
+  const formulaireConnexion = true;
+
 
   // Champs du formulaire
   const [adresseMail, setAdresseMail] = useState("");
