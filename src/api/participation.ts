@@ -1,6 +1,7 @@
-
-// Lien pour l'inscription à une mission
+// URL de base pour toutes les requêtes liées aux participations
 const BASE_URL = "http://localhost/api/Controller/Participation.php";
+
+// Inscrit un bénévole à une mission en envoyant son id et l'id de la mission
 export async function inscrireBenevole(id_benevole: number, id_mission: number) {
     const reponse = await fetch(`${BASE_URL}?action=inscrire`, {
         method: 'POST',
@@ -10,15 +11,14 @@ export async function inscrireBenevole(id_benevole: number, id_mission: number) 
     return reponse.json();
 }
 
-// Voir les missions des bénévoles connectés
+// Récupère toutes les participations actives du bénévole connecté
 export async function getMesParticipations(id_benevole: number) {
     const reponse = await fetch(`${BASE_URL}?action=mesParticipations&id_benevole=${id_benevole}`);
     return reponse.json();
 }
 
-// Annuler une participation
+// Annule une participation par son id (action effectuée par le bénévole lui-même)
 export async function annulerParticipation(id: number) {
-
     const reponse = await fetch(`${BASE_URL}?action=annuler`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
@@ -27,19 +27,19 @@ export async function annulerParticipation(id: number) {
     return reponse.json();
 }
 
-// Récupérer l'historique des participations d'un bénévole
+// Récupère l'historique complet des participations d'un bénévole (annulées, terminées...)
 export async function getHistorique(id_benevole: number) {
     const reponse = await fetch(`${BASE_URL}?action=historique&id_benevole=${id_benevole}`);
     return reponse.json();
 }
 
-// Récupérer les missions à venir d'un bénévole
+// Récupère les missions à venir auxquelles le bénévole est inscrit
 export async function getMissionsAVenir(id_benevole: number) {
     const reponse = await fetch(`${BASE_URL}?action=missionsAVenir&id_benevole=${id_benevole}`);
     return reponse.json();
 }
 
-// Récupérer les missions effectuées d'un bénévole
+// Récupère les missions déjà effectuées par le bénévole (missions terminées)
 export async function getMissionsEffectuees(id_benevole: number) {
     const reponse = await fetch(`${BASE_URL}?action=missionsEffectuees&id_benevole=${id_benevole}`);
     return reponse.json();
